@@ -15,9 +15,12 @@ Explanation: [4,-1,2,1] has the largest sum = 6.
 * @return {number}
 */
 var maxSubArray = function (nums) {
-    var max;
-    var maxSubArray = [];
-    for (var i = 0; i < nums.length; i++) {
+    let max = - Number.MAX_VALUE, pre = 0;
 
+    for (let i = 0; i < nums.length; i++) {
+        pre = Math.max(pre + nums[i], nums[i]);
+        max = Math.max(pre, max);
     }
+
+    return max;
 };
