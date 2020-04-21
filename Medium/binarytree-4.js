@@ -55,10 +55,10 @@ var printTree = function (root) {
         if (!root) return;
 
         let mid = Math.floor((start + end) / 2);
-        result[level - 1][mid] = root.val;
+        result[level - 1][mid] = root.val.toString();;
 
         fill(root.left, result, level + 1, start, mid - 1);
-        fill(root.rith, result, level + 1, mid + 1, right);
+        fill(root.right, result, level + 1, mid + 1, end);
 
     }
 
