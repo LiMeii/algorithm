@@ -10,3 +10,23 @@ longer = 2
 k = 3
 输出： {3,4,5,6}
  */
+
+/**
+* @param {number} shorter
+* @param {number} longer
+* @param {number} k
+* @return {number[]}
+*/
+var divingBoard = function (shorter, longer, k) {
+    var result = [], i = k;
+    if (k == 0) return [];
+    if (shorter == longer) return [shorter * k];
+    if (shorter < longer) {
+        while (i >= 0) {
+            result.push(shorter * i + longer * (k - i));
+            i--;
+        }
+        return result;
+    }
+
+}
