@@ -34,3 +34,20 @@ var minDepth = function (root) {
     }
 };
 
+
+//recursion
+
+var minDepth = function (root) {
+    if (!root) return 0;
+    var result = Infinity;
+
+    var tree = (node, level) => {
+        if (!node.left && !node.right) result = Math.min(result, level);
+        if (node.left) tree(node.left, level + 1);
+        if (node.right) tree(node.right, level + 1);
+    }
+
+    tree(root, 1);
+
+    return result;
+}
