@@ -7,7 +7,7 @@ var isBinarySearchTree = function (root) {
 
     // 中序遍历
 
-    var pre = null, ary = [];
+    var ary = [];
     var tree = node => {
         if (!node) return;
 
@@ -19,7 +19,7 @@ var isBinarySearchTree = function (root) {
     }
     tree(root);
 
-    for (let i = 0; i < ary.length; i++) {
+    for (let i = 0; i < ary.length - 1; i++) {
         if (ary[i] >= ary[i + 1]) return false;
     }
 
